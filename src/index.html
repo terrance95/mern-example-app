@@ -27,24 +27,5 @@
   <body>
     <div id="root">Loading App</div>
     <script src="./ClientApp.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/serviceWorker.js').then(
-            function(registration) {
-              // Registration was successful
-              console.log(
-                'ServiceWorker registration successful with scope: ',
-                registration.scope
-              );
-            },
-            function(error) {
-              // registration failed :(
-              console.log('ServiceWorker registration failed: ', error);
-            }
-          );
-        });
-      }
-    </script>
   </body>
 </html>
