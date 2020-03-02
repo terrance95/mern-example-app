@@ -22,7 +22,7 @@ mongoose
     console.error('Connection error', e.message);
   });
 
-app.use('/api/photo', photoRouter);
+app.use('/api/photos', photoRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello API');
