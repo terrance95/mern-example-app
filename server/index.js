@@ -13,7 +13,7 @@ const parts = html.split('Loading App');
 
 const app = express();
 
-app.use('/dist', express.static('dist'));
+app.use('/public', express.static('public'));
 
 // Run Middleware
 app.use((req, res) => {

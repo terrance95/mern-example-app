@@ -28,6 +28,10 @@ app.get('/', (req, res) => {
   res.send('Hello API');
 });
 
+app.get('/login', (req, res) => {
+  res.send('Login');
+});
+
 app.post('/', (req, res) => {
   console.log('got it');
   res.send('Done');
