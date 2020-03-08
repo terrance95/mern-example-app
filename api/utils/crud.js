@@ -1,6 +1,7 @@
 export const getOne = model => async (req, res) => {
   try {
     const doc = await model.find({ _id: req.params.id });
+
     console.log(doc);
     if (!doc) {
       return res.status(400).end();
@@ -15,9 +16,13 @@ export const getOne = model => async (req, res) => {
 
 export const createOne = model => async (req, res) => {
   try {
-    console.log(model);
-    const doc = model.create({ ...req.body });
-    res.status(201).json({ data: doc });
+    const doc = model.create({ ...req.body }, function(err, model) {
+      if (err) throw err;
+      console.log('Blog Data created!');
+      var id = model._id;
+      console.log(id);
+      res.status(201).send(id);
+    });
   } catch (e) {
     console.error(e);
     res.status(400).end();

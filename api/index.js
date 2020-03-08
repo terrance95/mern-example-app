@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import { json, urlencoded } from 'body-parser';
-import photoRouter from './resources/photos/photo.router';
+import notesRouter from './resources/notes/router';
 
 const app = express();
 const PORT = 5000;
@@ -14,7 +14,7 @@ app.use(urlencoded({ extended: true }));
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/photo-gallery', { useNewUrlParser: true })
+  .connect('mongodb://127.0.0.1:27017/blog', { useNewUrlParser: true })
   .then(() => {
     console.log('MongoDB Connected.');
   })
@@ -22,7 +22,7 @@ mongoose
     console.error('Connection error', e.message);
   });
 
-app.use('/api/photos', photoRouter);
+app.use('/api/notes', notesRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello API');

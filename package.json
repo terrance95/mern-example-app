@@ -27,8 +27,7 @@
     "googleapis": "^47.0.0",
     "mongoose": "^5.9.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "tailwindcss": "^1.2.0"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

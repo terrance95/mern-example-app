@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import crudControllers from './photo.controller';
+import crudControllers from './controller';
 
 const router = Router();
 
@@ -8,6 +8,9 @@ router
   .get(crudControllers.getMany)
   .post(crudControllers.createOne);
 
-router.route('/:id').get(crudControllers.getOne);
+router
+  .route('/:id')
+  .get(crudControllers.getOne)
+  .put(crudControllers.updateOne);
 
 export default router;
